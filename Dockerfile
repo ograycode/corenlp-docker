@@ -8,7 +8,7 @@ RUN apk add --update --no-cache \
 	wget -q http://nlp.stanford.edu/software/stanford-corenlp-4.0.0.zip && \
 	unzip stanford-corenlp-4.0.0.zip -d /stanford-corenlp && \
 	rm stanford-corenlp-4.0.0.zip && \
-	wget -q -P /stanford-corenlp http://nlp.stanford.edu/software/stanford-corenlp-4.0.0-models-english.jar
+	wget -q -P /stanford-corenlp http://nlp.stanford.edu/software/stanford-corenlp-4.0.0-models-chinese.jar
 
 WORKDIR /stanford-corenlp
 
