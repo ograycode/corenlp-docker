@@ -1,17 +1,16 @@
 FROM openjdk:8-jre-alpine
 
-MAINTAINER Qi Yang <i@yangqi.me>
-
+LABEL maintainer="Qi Yang <i@yangqi.me>"
 
 RUN apk add --update --no-cache \
 	 unzip \
 	 wget && \
 	wget -q http://nlp.stanford.edu/software/stanford-corenlp-4.0.0.zip && \
-	unzip stanford-corenlp-4.0.0.zip -d stanford-corenlp && \
+	unzip stanford-corenlp-4.0.0.zip -d /stanford-corenlp && \
 	rm stanford-corenlp-4.0.0.zip && \
-	wget -q -P stanford-corenlp http://nlp.stanford.edu/software/stanford-corenlp-4.0.0-models-english.jar
+	wget -q -P /stanford-corenlp http://nlp.stanford.edu/software/stanford-corenlp-4.0.0-models-english.jar
 
-WORKDIR stanford-corenlp
+WORKDIR /stanford-corenlp
 
 RUN export CLASSPATH="`find . -name '*.jar'`"
 
